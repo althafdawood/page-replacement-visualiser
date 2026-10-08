@@ -173,7 +173,9 @@ function play() {
 function reset() { stop(); S.i = 0; render(); }
 
 /* ---------- Events ---------- */
-$('apply').onclick = startSimulation;
+
+$('refs').oninput = startSimulation;
+$('nf').oninput = startSimulation;
 $('refs').onkeydown = e => { if (e.key === 'Enter') startSimulation(); };
 $('next').onclick = () => { stop(); step(1); };
 $('back').onclick = () => { stop(); step(-1); };
